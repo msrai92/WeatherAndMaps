@@ -58,7 +58,7 @@ class App extends Component {
     }
 
     const apiCall = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${lattitude}&lon=${longitude}&appid=${API_KEY}&units=imperial`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lattitude}&lon=${longitude}&appid=${API_KEY}&units=imperial`
     );
     const info = await apiCall.json();
 
@@ -96,10 +96,9 @@ class App extends Component {
     return (
       <div style={{ flex: 1, flexDirection: "column" }} className="wrapper">
         <div className="col-xs-7 header">
-          <Header/>
+          <Header />
         </div>
         <div className="col-xs-7 form-container">
-        
           <div className="form-container3">
             <Address getAddress={this.getAddress} />
             <Destination getDest={this.getDest} />
